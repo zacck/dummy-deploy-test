@@ -1,0 +1,5 @@
+{
+  "endpoint": "https://app.openfn.org/api/provision",
+  "statePath": ".state.json",
+  "specPath": "project-z.yaml"
+}
