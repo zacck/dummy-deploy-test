@@ -1,0 +1,45 @@
+name: try-again-this-thing
+description: all the fun is here now now now
+# credentials:
+# globals:
+workflows:
+  very-fun-to-try-now:
+    name: very fun to try now
+    jobs:
+      My-First-Job:
+        name: My-First-Job
+        adaptor: '@openfn/language-http@latest'
+        enabled: true
+        # credential:
+        # globals:
+        body: |
+          alterState(state => {
+            console.log("Hello world!");
+            return state;
+          });
+          
+      My-Second-Job:
+        name: My-Second-Job
+        adaptor: '@openfn/language-common@latest'
+        enabled: true
+        # credential:
+        # globals:
+        body: |
+          alterState(state => {
+            console.log("Goodbye world!");
+            return state;
+          });
+          
+    triggers:
+      cron:
+        type: cron
+        cron_expression: '7 23 * * *'
+    edges:
+      My-First-Job->My-Second-Job:
+        source_job: My-First-Job
+        target_job: My-Second-Job
+        condition: on_job_success
+      cron->My-First-Job:
+        source_trigger: cron
+        target_job: My-First-Job
+        condition: always
