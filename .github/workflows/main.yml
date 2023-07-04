@@ -6,6 +6,6 @@ jobs:
     name: A job to say hello
     steps:
       - name: Attempt Release 1
-        uses: zacck/test-action@v0.1.1
+        uses: zacck/test-action@v0.1.2
         with: 
           secret_input: ${{ secrets.OPENFN_API_KEY }}
