@@ -8,4 +8,4 @@ jobs:
       - name: Attempt Release 1
         uses: zacck/test-action@v0.1.0
         with: 
-        secret_input: ${{ secrets.OPENFN_API_KEY }}
+          secret_input: ${{ secrets.OPENFN_API_KEY }}
