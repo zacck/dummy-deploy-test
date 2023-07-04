@@ -6,4 +6,4 @@ jobs:
     name: A job to say hello
     steps:
       - name: Attempt Release 1
-        uses: zacck/test-action@v0.0.5
+        uses: zacck/test-action@v0.0.6
