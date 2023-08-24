@@ -10,16 +10,4 @@ jobs:
         with: 
           secret_input: ${{ secrets.OPENFN_API_KEY }}
 
-on: [repository_dispatch]
 
-jobs:
-  pull_job:
-    runs-on: ubuntu-latest
-    name: A job to pull changes from Lightning
-    steps:
-      - name: Attempt Release 1
-        uses: zacck/test-pull-action@v0.0.1 
-        with: 
-          secret_input: ${{ secrets.OPENFN_API_KEY }}
-          project_id_input: ${{ secrets.OPENFN_PROJECT_ID }}
-          commit_message: ${{ github.event.client_payload.message }}
