@@ -21,3 +21,4 @@ jobs:
         uses: zacck/test-pull-action@v0.0.1 
         with: 
           secret_input: ${{ secrets.OPENFN_API_KEY }}
+          project_id_input: ${{ secrets.OPENFN_PROJECT_ID }}
