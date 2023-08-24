@@ -22,3 +22,4 @@ jobs:
         with: 
           secret_input: ${{ secrets.OPENFN_API_KEY }}
           project_id_input: ${{ secrets.OPENFN_PROJECT_ID }}
+          commit_message: ${{ github.event.client_payload.message }}
